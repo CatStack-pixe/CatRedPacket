@@ -1,0 +1,62 @@
+# 插件前缀 (Prefix for all messages)
+prefix: "<dark_green>[CatRedPacket] </dark_green>"
+
+messages:
+  # 通用
+  no-permission:       "<red>你没有权限执行此操作！</red>"
+  invalid-args:        "<yellow>用法: /redpacket <create|info|claim|list|delete|help></yellow>"
+  unknown-command:     "<red>未知命令，请使用 /redpacket help 查看帮助。</red>"
+
+  # 帮助
+  help-header:         "<yellow>---- 红包插件帮助 ----</yellow>"
+  help-lines:
+    - "<green>/redpacket create</green> - 创建一个红包"
+    - "<green>/redpacket info <id></green> - 查询红包详细信息"
+    - "<green>/redpacket claim <id> [密码]</green> - 领取红包"
+    - "<green>/redpacket list</green> - 列出你创建的所有红包"
+    - "<green>/redpacket delete <id></green> - 删除一个未领取完的红包"
+    - "<green>/redpacket help</green> - 显示帮助信息"
+
+  # 创建流程
+  create-prompt-type:      "<green>请选择红包类型: <#55ffff>equal</#55ffff>/<#ffaa00>random</#ffaa00></green>"
+  create-prompt-amount:    "<green>请输入 红包金额/个数 (如:100/5):</green>"
+  create-prompt-password:  "<green>请输入红包密码 (可留空):</green>"
+  create-prompt-confirm:   "<yellow>确认创建红包？(yes/no)</yellow>"
+  create-cancel:           "<red>已取消创建红包</red>"
+  create-success:          "<green>红包创建成功! ID: <gold>%d</gold>，总额: <gold>%.2f</gold></green>"
+  error-insufficient-funds: "<red>余额不足，无法创建红包！</red>"
+
+  # 查询流程
+  info-heading:     "<yellow>---- 红包信息 ----</yellow>"
+  info-id:          "<green>ID: </green><gold>%d</gold>"
+  info-type:        "<green>类型: </green><gold>%s</gold>"
+  info-owner:       "<green>拥有者: </green><gold>%s</gold>"
+  info-created:     "<green>创建时间: </green><gold>%s</gold>"
+  info-total:       "<green>总额: </green><gold>%.2f</gold>"
+  info-remain:      "<green>剩余: </green><gold>%.2f / %d</gold>"
+  info-claims-header: "<yellow>---- 领取记录 ----</yellow>"
+  info-claim-line:  "<green>%s</green> → <gold>%.2f</gold> at <gray>%s</gray>"
+  info-notfound:    "<red>未找到该红包！</red>"
+
+  # 列表流程
+  list-heading:     "<yellow>---- 我的红包列表 ----</yellow>"
+  list-line:        "<green>ID:</green><gold>%d</gold> | <green>剩余:</green><gold>%.2f/%d</gold> | <green>状态:</green><gold>%s</gold>"
+  list-empty:       "<yellow>你当前没有创建任何红包。</yellow>"
+
+  # 删除流程
+  delete-prompt-confirm: "<yellow>确认删除红包 ID: <gold>%d</gold>？(yes/no)</yellow>"
+  delete-cancel:          "<red>已取消删除</red>"
+  delete-success:         "<green>红包 ID: <gold>%d</gold> 删除成功！所剩资金已退还。</green>"
+  delete-failed:          "<red>删除失败：仅支持删除尚未被领取的红包。</red>"
+  delete-notfound:        "<red>未找到该红包或已被领取完，无法删除。</red>"
+
+  # 领取流程
+  claim-no-password:      "<red>此红包需要密码，请使用 /redpacket claim <id> <password></red>"
+  claim-wrong-password:   "<red>红包密码错误！</red>"
+  claim-already:          "<red>你已领取过此红包！</red>"
+  claim-empty:            "<red>红包已被领完！</red>"
+  claim-success:          "<green>领取成功: 获得<gold>%.2f</gold> 元</green>"
+
+  # 其他
+  reload-success:         "<green>配置已重载！</green>"
+  system-error:           "<red>系统异常，请稍后重试。如有疑问请联系管理员。</red>"

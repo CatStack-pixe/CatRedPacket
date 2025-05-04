@@ -1,0 +1,12 @@
+name: CatRedPacket
+version: '${project.version}'
+main: com.catredpacket.CatRedPacket
+api-version: '1.21'
+folia-supported: true
+softdepend:
+  - XConomy
+commands:
+  redpacket:
+    description: 发/抢红包
+    aliases: [rp]
+    usage: /<command> send <金额> <份数> 或 /<command> grab <红包ID>
